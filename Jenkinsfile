@@ -73,7 +73,7 @@ pipeline {
             steps {
                 dir('server') { 
                    dependencyCheck additionalArguments: '--scan ./   ', odcInstallation: 'DP'
-                   dependencyCheckPublisher pattern: '**//*dependency-check-report.xml' 
+                   dependencyCheckPublisher pattern: '**//*dependency-check-report.xml'  
                 }
             }
         }
