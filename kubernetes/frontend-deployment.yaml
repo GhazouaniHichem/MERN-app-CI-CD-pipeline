@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moviesfrontend-deployment
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: moviesfrontend
+  template:
+    metadata:
+      labels:
+        app: moviesfrontend
+    spec:
+      containers:
+        - name: moviesfrontend
+          image: ghazouanihm/movies-front:1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
