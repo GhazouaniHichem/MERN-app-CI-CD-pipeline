@@ -11,14 +11,14 @@ pipeline {
     }
 
     stages {
-/*         stage('Cleanup Workspace'){
+         stage('Cleanup Workspace'){
             steps {
                 script {
                     cleanWs()
                 }
             }
         }
-*/
+
 
         stage('Git Checkout ') {
             steps {
