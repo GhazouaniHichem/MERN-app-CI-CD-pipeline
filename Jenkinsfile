@@ -26,15 +26,25 @@ pipeline {
             }
         }
         
-        stage('Code Compile') {
+        stage('Code Build') {
             steps {
+                dir('client') {
                     sh "npm install"
+                }
+                dir('server') {
+                    sh "npm install"
+                }
             }
         }
         
         stage('Run Test Cases') {
             steps {
+                dir('client') {
                     sh "npm run test"
+                }
+                dir('server') {
+                    sh "npm run test"
+                }
             }
         }
         
