@@ -110,7 +110,7 @@ pipeline {
             }
             steps {
                 build job: 'mern-gitops-pipeline', parameters: [
-                string(name: 'IMAGE_TAG', value: "${IMAGE_TAG}")
+                string(name: 'IMAGE_TAG', value: "${env.IMAGE_TAG}")
                 ]
             }
         }
