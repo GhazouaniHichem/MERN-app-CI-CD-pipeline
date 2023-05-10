@@ -4,6 +4,7 @@ pipeline {
     tools {
         jdk 'jdk11'
         maven 'maven3'
+        nodejs 'nodejs'
     }
     
     environment{
@@ -22,7 +23,7 @@ pipeline {
 
         stage('Git Checkout ') {
             steps {
-                git credentialsId: 'github', branch: 'main', changelog: false, poll: false, url: 'https://github.com/GhazouaniHichem/Java-CI-CD-complete-pipeline.git'
+                git credentialsId: 'github', branch: 'main', changelog: false, poll: false, url: 'https://github.com/GhazouaniHichem/MERN-app-CI-CD-pipeline.git'
             }
         }
         
