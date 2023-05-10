@@ -11,14 +11,14 @@ pipeline {
     }
 
     stages {
-        stage('Cleanup Workspace'){
+/*         stage('Cleanup Workspace'){
             steps {
                 script {
                     cleanWs()
                 }
             }
         }
-
+*/
 
         stage('Git Checkout ') {
             steps {
@@ -99,8 +99,8 @@ pipeline {
         
         stage('Docker Image scan') {
             steps {
-                    sh "trivy image ghazouanihm/movies-mern-app-frontend:latest "
-                    sh "trivy image ghazouanihm/movies-mern-app-backend:latest "
+                    sh "trivy image ghazouanihm/movies-mern-app-frontend:${BUILD_NUMBER} "
+                    sh "trivy image ghazouanihm/movies-mern-app-backend:${BUILD_NUMBER} "
             }
         }
         
