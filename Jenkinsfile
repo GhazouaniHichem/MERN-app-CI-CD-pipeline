@@ -37,7 +37,7 @@ pipeline {
             }
         }
         
-/*        stage('Run Test Cases') {
+        stage('Run Test Cases') {
             steps {
                 dir('client') {
                     sh "npm run test"
@@ -47,7 +47,7 @@ pipeline {
                 }
             }
         }
-*/        
+        
         stage('Sonarqube Analysis') {
             steps {
                 dir('client') {
