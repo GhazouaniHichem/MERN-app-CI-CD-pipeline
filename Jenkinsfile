@@ -106,8 +106,13 @@ pipeline {
 
         stage('Trigger gitops pipeline') {
             steps {
-                sh "curl -v -k --user ghazouanihm:1104cb176067bb1b1c8e741d643fd6f86d -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${BUILD_NUMBER}' 'http://35.180.57.111:8080/job/mern-gitops-pipeline/buildwithParameters?token=mern-gitops-token'"
+                build job: 'mern-gitops-pipeline', parameters: [
+                string(name: 'IMAGE_TAG', value: "${BUILD_NUMBER}")
+                ]
             }
+/*             steps {
+                sh "curl -v -k --user ghazouanihm:1104cb176067bb1b1c8e741d643fd6f86d -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${BUILD_NUMBER}' 'http://35.180.57.111:8080/job/mern-gitops-pipeline/buildwithParameters?token=mern-gitops-token'"
+            }*/
         }
 
         
