@@ -99,8 +99,8 @@ pipeline {
         
         stage('Docker Image scan') {
             steps {
-                    sh "trivy image ghazouanihm/movies-mern-app-frontend:${BUILD_NUMBER} "
-                    sh "trivy image ghazouanihm/movies-mern-app-backend:${BUILD_NUMBER} "
+                    sh "trivy image ghazouanihm/movies-mern-app-frontend:${BUILD_NUMBER}"
+                    sh "trivy image ghazouanihm/movies-mern-app-backend:${BUILD_NUMBER}"
             }
         }
         
